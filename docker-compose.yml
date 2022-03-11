@@ -1,0 +1,10 @@
+version: '3'
+services:
+  job:
+    build:
+      context: .
+    network_mode: host
+    env_file:
+      - .env
+    volumes:
+      - ./src:/src
