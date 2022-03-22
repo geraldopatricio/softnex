@@ -33,10 +33,10 @@ def conect_ftp(host, port, user, passwd, path_remote):
 
 
 def send_rem_ftp(nome_arquivo):
-    # conecta ao FTP SOFTNEX
-    print("Conectando FTP SOFTNEX Remessa")
-    ftp = conect_ftp(config_env['host_ftp_softnex'], config_env['port_ftp_softnex'],
-                     config_env['username_ftp_softnex'], config_env['passwd_ftp_softnex'], config_env['path_remote_rem'])
+    # conecta ao FTP xxx
+    print("Conectando FTP xxx xxx")
+    ftp = conect_ftp(config_env['host_ftp_xxx'], config_env['port_ftp_xxx'],
+                     config_env['username_ftp_xxx'], config_env['passwd_ftp_xxx'], config_env['path_remote_rem'])
     #local_file = open('{0}/{1}'.format(config_env["path_remessa"], nome_arquivo), 'rb')
     with open('{0}/{1}'.format(config_env["path_remessa"], nome_arquivo), 'rb') as local_file:
         ftp.storlines('STOR {0}'.format(nome_arquivo), local_file)
@@ -61,8 +61,8 @@ def send_rem_ftp(nome_arquivo):
 
 def return_ret_ftp():
     try:
-        print("Conectando FTP SOFTNEX Retorno")
-        with conect_ftp(config_env['host_ftp_softnex'], config_env['port_ftp_softnex'], config_env['username_ftp_softnex'], config_env['passwd_ftp_softnex'], config_env['path_remote_ret']) as ftp:
+        print("Conectando FTP xxx Retorno")
+        with conect_ftp(config_env['host_ftp_xxx'], config_env['port_ftp_xxx'], config_env['username_ftp_xxx'], config_env['passwd_ftp_xxx'], config_env['path_remote_ret']) as ftp:
             filenames = ftp.nlst()
             print(filenames)
             if filenames:
