@@ -6,21 +6,21 @@ from cofre import Cofre
 
 def build_connection_string_web():
     cofre = Cofre()
-   #  cx_string_web = 'DRIVER={ODBC Driver 17 for SQL Server};SERVER=Ametista\db01,1433;DSN=ametista;DATABASE=WEB;UID=web;PWD=w3b!ng'
+   #  cx_string_web = 'DRIVER={ODBC Driver 17 for SQL Server};SERVER=xxx\db01,1433;DSN=xxx;DATABASE=xxx;UID=xxx;PWD=xxx'
     cx_string_web = "DRIVER={0};SERVER={1},1433;DATABASE={2};UID={3};PWD={4}".format(
         '{ODBC Driver 17 for SQL Server}', cofre.get_secret_azure(
-            'DB-AMETISTA-HOST'), cofre.get_secret_azure('DB-AMETISTA-DATABASE'),
-        cofre.get_secret_azure('DB-AMETISTA-RDKESTABELECIMENTOSCREDENCIADOS-USERNAME'), cofre.get_secret_azure('DB-AMETISTA-RDKESTABELECIMENTOSCREDENCIADOS-PASSWORD'))
+            'xxx-HOST'), cofre.get_secret_azure('xxx-DATABASE'),
+        cofre.get_secret_azure('xxx-USERNAME'), cofre.get_secret_azure('xxx-PASSWORD'))
     return cx_string_web
 
 
 def build_connection_string_stage():
     cofre = Cofre()
-    #  cx_string_stage = 'DRIVER={ODBC Driver 17 for SQL Server};SERVER=baseunica.database.windows.net,1433;DSN=Stage;DATABASE=Stage;UID=Operacao;PWD=0p3r@c03s'
+    #  cx_string_stage = 'DRIVER={ODBC Driver 17 for SQL Server};SERVER=xxx.windows.net,1433;DSN=Stage;DATABASE=xxx;UID=xxx;PWD=xxx'
     cx_string_stage = "DRIVER={0};SERVER={1},1433;DATABASE={2};UID={3};PWD={4}".format(
                       '{ODBC Driver 17 for SQL Server}', cofre.get_secret_azure(
-                          'DB-STAGE-HOST'), cofre.get_secret_azure('DB-STAGE-DATABASE'),
-        cofre.get_secret_azure('DB-STAGE-RDKESTABELECIMENTOSCREDENCIADOS-USERNAME'), cofre.get_secret_azure('DB-STAGE-RDKESTABELECIMENTOSCREDENCIADOS-PASSWORD'))
+                          'xxx-HOST'), cofre.get_secret_azure('xxx-DATABASE'),
+        cofre.get_secret_azure('xxx-USERNAME'), cofre.get_secret_azure('xxx-PASSWORD'))
     return cx_string_stage
 
 
